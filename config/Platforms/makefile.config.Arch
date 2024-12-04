@@ -1,0 +1,25 @@
+# Configuration for environments
+
+# Name of the environment
+PLAT=Arch
+ARCH := $(shell uname -m)
+
+# =========== Platform specific binaries
+CC= 	gcc
+CXX= 	g++
+AR= 	ar
+LD= 	g++
+
+# =========== Compiler / Linker flags
+CFLAGS= $(SYSCFLAGS) $(EXTCFLAGS)
+CXXFLAGS= $(SYSCXXFLAGS) $(EXTCXXFLAGS)
+ARFLAGS= $(SYSARFLAGS) $(EXTARFLAGS)
+LDFLAGS= $(SYSLDFLAGS) $(EXTLDFLAGS)
+
+
+# =========== Binary flags specific to this environment
+SYSCFLAGS= -c
+SYSCXXFLAGS= -c -std=c++2a -Wall -Wextra -fdiagnostics-show-option -g 
+#-DSIZE_T_OVERRIDE="unsigned long long int"
+SYSARFLAGS= cr
+SYSLDFLAGS=

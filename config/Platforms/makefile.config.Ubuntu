@@ -1,0 +1,24 @@
+# Configuration for environments
+
+# Name of the environment
+PLAT=Ubuntu
+ARCH := $(shell uname -m)
+
+# =========== Platform specific binaries
+CC= 	gcc
+CXX= 	g++
+AR= 	ar
+LD= 	g++
+
+# =========== Compiler / Linker flags
+CFLAGS= $(SYSCFLAGS) $(EXTCFLAGS)
+CXXFLAGS= $(SYSCXXFLAGS) $(EXTCXXFLAGS)
+ARFLAGS= $(SYSARFLAGS) $(EXTARFLAGS)
+LDFLAGS= $(SYSLDFLAGS) $(EXTLDFLAGS)
+
+
+# =========== Binary flags specific to this environment
+SYSCFLAGS= -c -g
+SYSCXXFLAGS= -c -g -std=c++2a -fconcepts -Wall -Wextra -fdiagnostics-show-option -Werror=return-type
+SYSARFLAGS= cr
+SYSLDFLAGS= -pthread

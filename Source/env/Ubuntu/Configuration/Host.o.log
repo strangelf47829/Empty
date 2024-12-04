@@ -1,0 +1,18 @@
+Configuration/Host.cpp: In function ‘BBP::std::errno_t Host::getHostValue(BBP::std::string&, BBP::std::conststring)’:
+Configuration/Host.cpp:17:18: error: ‘_popen’ was not declared in this scope; did you mean ‘popen’?
+   17 |     FILE *pipe = _popen(val, "r");
+      |                  ^~~~~~
+      |                  popen
+Configuration/Host.cpp:37:9: error: ‘_pclose’ was not declared in this scope; did you mean ‘pclose’?
+   37 |         _pclose(pipe);
+      |         ^~~~~~~
+      |         pclose
+Configuration/Host.cpp: In function ‘BBP::std::errno_t Host::getHostValue(BBP::std::word&, BBP::std::conststring)’:
+Configuration/Host.cpp:64:18: error: ‘_popen’ was not declared in this scope; did you mean ‘popen’?
+   64 |     FILE *pipe = _popen(val, "r");
+      |                  ^~~~~~
+      |                  popen
+Configuration/Host.cpp:84:9: error: ‘_pclose’ was not declared in this scope; did you mean ‘pclose’?
+   84 |         _pclose(pipe);
+      |         ^~~~~~~
+      |         pclose
